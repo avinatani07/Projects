@@ -1,0 +1,42 @@
+
+User Table:
+Create table users1(account_number int PRIMARY KEY,
+name varchar(20),
+pan_number varchar(10),
+phone_number varchar(10),
+email varchar(20),
+password varchar(20),
+balance decimal(10,2) default 0.0);
+
+Transaction Table:
+Create table stocks_purchased(account_number INT FOREIGN KEY REFERENCES master.dbo.users1(account_number),
+share_name varchar(25),
+share_quantity int,
+share_purchase_quantity int,
+share_price_purchased decimal(10,2) default 0.0,
+transaction_date DATETIME,
+share_price_sold decimal(10,2) default 0.0,
+transaction_sold_date DATETIME,
+sold_share_quantity int);
+
+
+Stock Market Table:
+CREATE TABLE stockmarket(
+  stock_name VARCHAR(50) NOT NULL,
+  stock_price Decimal(10,2),
+  stock_quantity INT NOT NULL
+);
+
+Stock Market Table Fields:
+INSERT INTO stockmarket (stock_name, stock_price, stock_quantity) 
+VALUES 
+('Tata Steel', 146.23, 100),
+('Ambuja Cement', 3296.00, 250),
+('Yes Bank', 240.44, 300),
+('HDFC Bank', 307.82, 200),
+('Indian Oil Corp.', 2055.95, 150),
+('MRF', 798.53, 50),
+('Zomato', 521.51, 100),
+('Paytm', 237.52, 400),
+('Parle', 161.12, 150),
+('Boat', 128.92, 200);

@@ -1,0 +1,3 @@
+jdbc:mysql://localhost/bus
+root
+Amazon@123
